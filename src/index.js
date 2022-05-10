@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM  from 'react-dom'
+import "bootstrap/dist/css/bootstratp.min.css"
+import detectEthereumProvider from "@metamask/detect-provider"
+import {Contract, ethers} from 'ethers'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+class App extends React.Component{
+
+    async getBlockchain(){
+        let provider = await detectEthereumProvider
+        if (provider){
+          await provider.request( { method: 'eht_requestAccounts' } )
+        provider = 
+        }
+        return null;
+
+    }
+    
+}
+
+ReactDOM.render(
     <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    document.getElementById('root')
+)
