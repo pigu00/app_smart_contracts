@@ -1,11 +1,21 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
-import "bootstrap/dist/css/bootstratp.min.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import detectEthereumProvider from "@metamask/detect-provider"
 import {Contract, ethers} from 'ethers'
 import myContractManifest from './contracs/MyContract.json'
 
 class App extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.initToAsync();
+    }
+
+    async initToAsync(){
+        var myContract = await this.getBlockchain();
+        var data = await myContract.;
+    }
 
     async getBlockchain(){
 
